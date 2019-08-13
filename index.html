@@ -7,6 +7,8 @@
 
 <body>
     <script>
+        let playerScore = 0;
+        let computerScore = 0;
         function computerPlay() {
             let max = 3;
             let min = 1;
@@ -28,28 +30,48 @@
 
         function playRound(playerSelection, computerSelection) {
             if (playerSelection == 'rock' && computerSelection == 'scissors') {
+                playerScore++;
                 return 'You win!! ' + playerSelection + ' beats ' + computerSelection;
             } else if (playerSelection == 'paper' && computerSelection == 'rock') {
+                playerScore++;
                 return 'You win!! ' + playerSelection + ' beats ' + computerSelection;
             } else if (playerSelection == 'scissors' && computerSelection == 'paper') {
+                playerScore++;
                 return 'You win!! ' + playerSelection + ' beats ' + computerSelection;
-            }else if(playerSelection == computerSelection){
+            } else if (playerSelection == computerSelection) {
                 return 'its a Tie!! you both chose ' + playerSelection;
             }
-            else{
+            else {
+                computerScore++;
                 return 'You lose!! ' + computerSelection + ' beats ' + playerSelection;
             }
-            
-        }
-        let player = prompt('rock, paper, or scissors??');
-        player = player.toLowerCase();
-        let pc = computerPlay();
-        console.log('the computer chose : ' + pc);
-        let result = playRound(player,pc);
-        console.log(result);
 
-        
-        
+        }
+        function game() {
+            for (let i = 0; i < 5; i++) {
+                let player = prompt('rock, paper, or scissors??');
+                player = player.toLowerCase();
+                let pc = computerPlay();
+                console.log('the computer chose : ' + pc);
+                let result = playRound(player, pc);
+                console.log(result);
+                console.log('your score : ' + playerScore);
+                console.log('computer score : ' + computerScore);
+            }
+            if(playerScore>computerScore){
+                console.log('You win!!');
+                return 'You win!!';
+            }else if(computerScore>playerScore){
+                console.log('You lose!..');
+                return 'You lose!..';
+            }else{
+                console.log('Its a tie!!');
+                return 'Its a tie!!';
+            }
+
+        }
+
+        game();
 
 
     </script>
