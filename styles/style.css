@@ -1,0 +1,22 @@
+body {
+    margin: 0 0;
+    padding: 0 0;
+}
+
+.paren_div {
+    margin-left: 20%;
+    margin-right: 20%; 
+    background-color: darkslateblue;
+    padding: 30px 30px;
+    text-align: center;
+    color: white;
+}
+.choice {
+    margin: 40px 20px 0px 20px;
+}
+.score_div {
+    background-color: white;
+    width: 30px;
+    color: black;
+    margin: 0 auto;
+}
